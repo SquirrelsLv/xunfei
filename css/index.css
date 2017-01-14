@@ -156,9 +156,6 @@ section{
     opacity: 1;
 }
 
-.p2{
-    background: blue;
-}
 .p3{
     background: red;
 }
@@ -292,7 +289,7 @@ section{
 .p1{
     perspective: 500px;
 }
-.p1 .title{
+.title{
     width: 300px;
     position: absolute;
     left: 50%;
@@ -301,11 +298,11 @@ section{
     margin-top: -180px;
     text-align: left;
 }
-.p1 .title img  {
+.title img  {
     width: 268px;
     height: 50px;
 }
-.p1 .title p{
+.title p{
     line-height: 30px;
     margin-top: 20px;
 }
@@ -335,17 +332,71 @@ section{
 }
 .p1 .crc img:nth-child(6){
     animation: big 2s infinite ;
-    animation-delay: 0.9s;
+    animation-delay: 0.8s;
 }
 @keyframes big {
     0%{opacity:1;transform:translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);}
     100%{opacity:0;transform:translateX(100px) translateY(0) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);}
 }
 
+/*************************************p2*/
+
+.p2 .title{
+    margin-left: 100px;
+    margin-top: -150px;
+}
+.p2 .title p{
+    text-align: justify;
+}
+.p2 .ani{
+    width: 476px;
+    height: 364px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -182px;
+    margin-left: -500px;
+
+}
+.p2 .ani img{
+    position: absolute;
+    left:0;
+    top: 0;
+}
+.p2 .ani img:nth-child(1){
+    box-shadow: -3px 3px 5px #bfbfbf;
+    transform: perspective(500px) rotateX(20deg) rotateY(30deg) rotateZ(-10deg)  scaleX(0.8) scaleY(0.8);
+}
+.p2 .ani img:nth-child(2){
+    left: 100px;
+    top: 100px;
+    animation: show 4s infinite linear;
+}
+.p2 .ani img:nth-child(3){
+    left: 100px;
+    top: 100px;
+    animation: show 4s infinite linear;
+    animation-delay: 2s;
+}
 
 
+@keyframes show {
+    0%{opacity: 0;}
+    50%{opacity: 1;}
+    100%{opacity: 0;}
+}
 
 
+.p2 .ani img:nth-child(4){
+    left: 300px;
+    top: 70px;
+    animation: downup 2s infinite linear;
+}
+@keyframes downup {
+    0%{top:70px;}
+    50%{top:40px;}
+    100%{top:70px;}
+}
 
 
 
