@@ -13,6 +13,7 @@ $(function () {
     }
     var index = 0;
     var timer = null;
+    var Hc = document.body.clientHeight;
     //侧边栏鼠标移入移出效果
     $('.side li').hover(function () {
         $(this).addClass('cur').siblings().removeClass('cur');
@@ -25,7 +26,7 @@ $(function () {
         index = $(this).index();
         downl(index);
         $('.side li').eq(index).addClass('cur').siblings().removeClass('cur');
-        $('section').eq(index).show().siblings('section').hide();
+        $('section').eq(0).css('margin-top',-index*Hc);
     });
     //滑动滚轮
     $(window).mousewheel(function (ev,d) {
@@ -37,7 +38,7 @@ $(function () {
             }
             downl(index);
             $('.side li').eq(index).addClass('cur').siblings().removeClass('cur');
-            $('section').eq(index).show().siblings('section').hide();
+            $('section').eq(0).css('margin-top',-index*Hc);
         },200);
     });
 

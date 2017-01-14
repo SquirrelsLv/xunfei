@@ -10,6 +10,21 @@ a{
     text-decoration: none;
     color: #666;
 }
+section{
+    position: relative;
+    z-index: 2;
+    transition: all 0.5s;
+}
+/* 顺时针360转动*/
+@keyframes run360 {
+    0%{transform:translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);}
+    100%{transform:translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(360deg) scaleX(1) scaleY(1) scaleZ(1);}
+}
+/*你是指360转动*/
+@keyframes run-360 {
+    0%{transform:translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);}
+    100%{transform:translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(-360deg) scaleX(1) scaleY(1) scaleZ(1);}
+}
 /**********************************************************nav导航*/
 
 #nav {
@@ -20,6 +35,7 @@ a{
     left: 0;
     top: 0;
     border-bottom: 1px solid #ddd;
+    z-index: 10;
 }
 .center {
     width: 95%;
@@ -101,6 +117,7 @@ a{
     right: 20px;
     top: 50%;
     margin-top: -80px;
+    z-index: 10;
 }
 .side li {
     width: 40px;
@@ -121,9 +138,13 @@ a{
 }
 .side li span{
     display: inline-block;
-    width: 100%;
-    height: 100%;
-    line-height: 25px;
+    width: 80%;
+    height: 80%;
+    line-height: 20px;
+    background: #888;
+    color: #eee;
+    margin-left: 3px;
+    border-radius: 5px;
     font-size: 12px;
     text-align: center;
     opacity: 0;
@@ -134,21 +155,204 @@ a{
 .side .cur span {
     opacity: 1;
 }
-.p1{
-     background: red;
- }
+
 .p2{
-    background: pink;
+    background: blue;
 }
 .p3{
-    background: blue;
-}
-.p4{
     background: red;
 }
-.p5{
+.p4{
     background: pink;
 }
-.p6{
+.p5{
     background: blue;
 }
+
+/****************************************************************P1样式*/
+.p0 .title{
+    width: 100px;
+    height: 140px;
+    position: absolute;
+    right: 150px;
+    top: 100px;
+}
+.p0 .title span {
+    display: block;
+    width: 100px;
+    height: 100px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.p0 .title p{
+    line-height:24px;
+    font-size: 12px;
+    color: #333;
+    text-align: center;
+}
+.main{
+    width: 900px;
+    height: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -450px;
+    margin-top: -300px;
+}
+.p0 .main img:nth-child(1){
+    width: 390px;
+    height: 228px;
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    margin-left: -195px;
+}
+.p0 .main img:nth-child(2){
+    width: 740px;
+    height: 55px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -370px;
+}
+.p0 .main img:nth-child(3){
+    width: 390px;
+    height: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -195px;
+    margin-top: 80px;
+}
+.p0 .main .down{
+    width: 360px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -180px;
+    margin-top: 150px;
+    color: #666;
+    text-align: center;
+    font-size: 12px;
+}
+.p0 .down span:nth-child(1){
+    float: left;
+}
+.p0 .down span:nth-child(2){
+    float: right;
+}
+.p0 .down span:nth-child(1) a{
+    background: #4ed257;
+}
+.p0 .down span:nth-child(2) a{
+    background: #4698ff;
+}
+.p0 .down a{
+    display: block;
+    width: 140px;
+    padding: 20px 0;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 10px;
+
+}
+
+.p0 .footer{
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    bottom: 10px;
+}
+.p0 .footer img{
+    width: 64px;
+    height: 20px;
+    position: absolute;
+    left: 50%;
+    top: -60px;
+    margin-left: -32px;
+    animation: scrolldown 2s infinite linear;
+}
+@keyframes scrolldown {
+    0%{top: -60px;}
+    50%{top: -30px;}
+    100%{top: -60px;}
+}
+.p0 .footer p{
+    position: absolute;
+    right: 50px;
+    top: -50px;
+    color: #333;
+}
+
+/********************************************************p1*/
+.p1{
+    perspective: 500px;
+}
+.p1 .title{
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -550px;
+    margin-top: -180px;
+    text-align: left;
+}
+.p1 .title img  {
+    width: 268px;
+    height: 50px;
+}
+.p1 .title p{
+    line-height: 30px;
+    margin-top: 20px;
+}
+.p1 .crc{
+    width: 370px;
+    height: 370px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: 20px;
+    margin-top: -180px;
+    transform:translateX(0) translateY(0) translateZ(0) rotateX(45deg) rotateY(-75deg) rotateZ(45deg) scaleX(1) scaleY(1) scaleZ(1);
+}
+.p1 .crc img {
+    width: 370px;
+    height: 370px;
+    position: absolute;
+}
+.p1 .crc img:nth-child(3){
+    animation: run360 1.5s infinite linear;
+}
+.p1 .crc img:nth-child(2){
+    animation: run-360 5s infinite linear;
+}
+.p1 .crc img:nth-child(5){
+    animation: big 2s infinite ;
+}
+.p1 .crc img:nth-child(6){
+    animation: big 2s infinite ;
+    animation-delay: 0.9s;
+}
+@keyframes big {
+    0%{opacity:1;transform:translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);}
+    100%{opacity:0;transform:translateX(100px) translateY(0) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
