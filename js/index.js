@@ -1,6 +1,3 @@
-/**
- * Created by Administrator on 2017/1/12 0012.
- */
 $(function () {
 
     // nav,与 download切换显示;
@@ -47,9 +44,70 @@ $(function () {
         $('#nav .download img').eq($(this).index()).toggle();
     });
 
+    //轮播图
+    var imgArr = [];
+    $('.p4 .main img').each(function (index,obj) {
+        imgArr.push(obj);
+    });
 
+    //设置数组中的图片的css样式
+    function imgCss() {
+        $(imgArr[0]).css({
+            width: 250,
+            height: 191,
+            left: -200,
+            top: 53,
+            'z-index': 2,
+        });
+        $(imgArr[1]).css({
+            width: 281,
+            height: 215,
+            left: -120,
+            top: 29,
+            'z-index': 3,
+        });
+        $(imgArr[2]).css({
+            width: 320,
+            height: 244,
+            left: -40,
+            top: 0,
+            'z-index': 4,
+        });
+        $(imgArr[3]).css({
+            width: 281,
+            height: 215,
+            left: 80,
+            top: 29,
+            'z-index': 3,
+        });
+        $(imgArr[4]).css({
+            width: 250,
+            height: 191,
+            left: 180,
+            top: 53,
+            'z-index': 2,
+        });
+        $(imgArr[5]).css({
+            width: 0,
+            height: 0,
+            left: -180,
+            top: 244,
+            'z-index': 0,
+        });
+        $(imgArr[6]).css({
+            width: 0,
+            height: 0,
+            left: 160,
+            top: 244,
+            'z-index': 0,
+        });
+    }
 
+    imgCss();
+    setInterval(function () {
+        imgArr.unshift(imgArr.pop());
+        imgCss();
+    },2000)
 
-    
     
 })
